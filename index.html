@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Reading Task</title>
+<title>Reading Task Test</title>
 
 <style>
 body{
@@ -28,6 +28,7 @@ body{
 h1{
   color:white;
   text-align:center;
+  margin-bottom:30px;
 }
 
 .card{
@@ -89,10 +90,22 @@ button{
   border-radius:10px;
   cursor:pointer;
   font-size:16px;
+  font-weight:bold;
 }
 
-.correct{color:green;font-weight:bold;}
-.wrong{color:red;font-weight:bold;}
+button:hover{
+  background:#1b5e20;
+}
+
+.correct{
+  color:green;
+  font-weight:bold;
+}
+
+.wrong{
+  color:red;
+  font-weight:bold;
+}
 
 .explanation{
   background:#eaf7ea;
@@ -114,6 +127,64 @@ th,td{
 th{
   background:#2e7d32;
   color:white;
+}
+
+.contact-box{
+  background:#eaf7ea;
+  padding:22px;
+  margin-top:25px;
+  border-radius:15px;
+  text-align:center;
+  border:2px solid #2e7d32;
+}
+
+.contact-box h2{
+  color:#2e7d32;
+  margin-bottom:10px;
+}
+
+.contact-box p{
+  font-size:16px;
+  margin-bottom:12px;
+  line-height:1.5;
+}
+
+.contact-btn{
+  display:inline-block;
+  margin:8px;
+  padding:12px 24px;
+  color:white;
+  text-decoration:none;
+  border-radius:10px;
+  font-weight:bold;
+}
+
+.whatsapp{
+  background:#25D366;
+}
+
+.telegram{
+  background:#229ED9;
+}
+
+@media(max-width:700px){
+  .overlay{
+    padding:20px;
+  }
+
+  .card{
+    padding:18px;
+  }
+
+  h1{
+    font-size:24px;
+  }
+
+  .contact-btn{
+    display:block;
+    margin:10px auto;
+    width:80%;
+  }
 }
 </style>
 </head>
@@ -163,7 +234,7 @@ Although building a green home is often more expensive than a regular home, most
 </div>
 
 <div class="card">
-<h2>Questions (35–42)</h2>
+<h2>Questions 35–42</h2>
 <div id="quiz"></div>
 <button onclick="checkAnswers()">Check Results</button>
 </div>
@@ -253,7 +324,7 @@ ways.
 </div>
 
 <div class="card">
-<h2>Questions (43–50)</h2>
+<h2>Questions 43–50</h2>
 <div id="quiz2"></div>
 <button onclick="checkAnswers2()">Check Results</button>
 </div>
@@ -265,34 +336,116 @@ ways.
 
 <script>
 const questions = [
-{q:"35. Popular way of having a green home is using",options:["A) earth","B) sun","C) wind","D) sky"],answer:1,kaz:"Мәтінде solar energy айтылған."},
-{q:"36. There are many volunteers who show their _____",options:["A) difference","B) hatred","C) opinion","D) desire"],answer:3,kaz:"Адамдар Жерді қорғауға үлес қосқысы келеді = тілек, ниет."},
-{q:"37. The quality of green homes depends on",options:["A) cheap","B) new","C) regular","D) long-lasting"],answer:3,kaz:"Үй сапасы ұзаққа шыдайтын материалдарға байланысты."},
-{q:"38. Eco-friendly way of life is",options:["A) not affordable","B) less popular","C) future","D) approved"],answer:3,kaz:"Көп адамдар “green home” идеясын қолдайды."},
-{q:"39. Building a regular home is often",options:["A) more expensive","B) much expensive","C) cheaper","D) reasonable"],answer:2,kaz:"Green үй қымбат, демек regular home арзанырақ."},
-{q:"40. Eco homes are",options:["A) not efficient","B) good for Earth","C) cheap","D) homeless"],answer:1,kaz:"Эко үйлер табиғатқа пайдалы."},
-{q:"41. These days people use",options:["A) eco bags","B) paper","C) modern","D) plastic"],answer:0,kaz:"Мәтінде eco-friendly shopping bags айтылған."},
-{q:"42. The green movement",options:["A) long ago","B) several","C) decade","D) recent"],answer:0,kaz:"About 40 years ago = көп жыл бұрын."}
+  {
+    q:"35. Popular way of having a green home is using",
+    options:["A) earth","B) sun","C) wind","D) sky"],
+    answer:1,
+    kaz:"Мәтінде solar energy айтылған."
+  },
+  {
+    q:"36. There are many volunteers who show their _____",
+    options:["A) difference","B) hatred","C) opinion","D) desire"],
+    answer:3,
+    kaz:"Адамдар Жерді қорғауға үлес қосқысы келеді = тілек, ниет."
+  },
+  {
+    q:"37. The quality of green homes depends on",
+    options:["A) cheap","B) new","C) regular","D) long-lasting"],
+    answer:3,
+    kaz:"Үй сапасы ұзаққа шыдайтын материалдарға байланысты."
+  },
+  {
+    q:"38. Eco-friendly way of life is",
+    options:["A) not affordable","B) less popular","C) future","D) approved"],
+    answer:3,
+    kaz:"Көп адамдар “green home” идеясын қолдайды."
+  },
+  {
+    q:"39. Building a regular home is often",
+    options:["A) more expensive","B) much expensive","C) cheaper","D) reasonable"],
+    answer:2,
+    kaz:"Green үй қымбат, демек regular home арзанырақ."
+  },
+  {
+    q:"40. Eco homes are",
+    options:["A) not efficient","B) good for Earth","C) cheap","D) homeless"],
+    answer:1,
+    kaz:"Эко үйлер табиғатқа пайдалы."
+  },
+  {
+    q:"41. These days people use",
+    options:["A) eco bags","B) paper","C) modern","D) plastic"],
+    answer:0,
+    kaz:"Мәтінде eco-friendly shopping bags айтылған."
+  },
+  {
+    q:"42. The green movement",
+    options:["A) long ago","B) several","C) decade","D) recent"],
+    answer:0,
+    kaz:"About 40 years ago = көп жыл бұрын."
+  }
 ];
 
 const questions2 = [
-{q:"43. Music improves:",options:["A) reading skills in the brain","B) writing skills in the brain","C) hearing abilities in the brain","D) language abilities in the brain"],answer:3,kaz:"Мәтінде music language abilities жақсартады делінген."},
-{q:"44. The text is about:",options:["A) a connection between music and language abilities","B) playing different types of musical instruments","C) different instruments and musicians","D) brain functioning and different types of patients"],answer:0,kaz:"Негізгі идея — музыка мен тіл байланысы."},
-{q:"45. Nina Kraus says that playing a musical instrument:",options:["A) can boost a person's hearing ability","B) can boost dancing skills","C) can boost talking in a noisy room","D) can boost writing skills"],answer:0,kaz:"Музыкалық аспап есту қабілетін жақсартады."},
-{q:"46. The synonym of improve is",options:["A) roast","B) boost","C) toast","D) goast"],answer:1,kaz:"Improve = boost."},
-{q:"47. Musicians can hear better because:",options:["A) they pay attention to sounds","B) they sing songs","C) they hear many instruments","D) they use brain language parts"],answer:0,kaz:"Олар нақты дыбыстарға назар аударады."},
-{q:"48. Find the true statement",options:["A) Nina Kraus plays in orchestra","B) Nina Kraus is violinist","C) Nina Kraus graduated Harvard","D) Nina Kraus is a researcher"],answer:3,kaz:"Nina Kraus — researcher."},
-{q:"49. Music helps people improve:",options:["A) reading","B) sleeping","C) memory, listening and concentration","D) painting"],answer:2,kaz:"Соңғы абзацта айтылған."},
-{q:"50. The synonym of ignore:",options:["A) stay for","B) look for","C) vote for","D) pay no attention"],answer:3,kaz:"Ignore = назар аудармау."}
+  {
+    q:"43. Music improves:",
+    options:["A) reading skills in the brain","B) writing skills in the brain","C) hearing abilities in the brain","D) language abilities in the brain"],
+    answer:3,
+    kaz:"Мәтінде music language abilities жақсартады делінген."
+  },
+  {
+    q:"44. The text is about:",
+    options:["A) a connection between music and language abilities","B) playing different types of musical instruments","C) different instruments and musicians","D) brain functioning and different types of patients"],
+    answer:0,
+    kaz:"Негізгі идея — музыка мен тіл байланысы."
+  },
+  {
+    q:"45. Nina Kraus says that playing a musical instrument:",
+    options:["A) can boost a person's hearing ability","B) can boost dancing skills","C) can boost talking in a noisy room","D) can boost writing skills"],
+    answer:0,
+    kaz:"Музыкалық аспап есту қабілетін жақсартады."
+  },
+  {
+    q:"46. The synonym of improve is",
+    options:["A) roast","B) boost","C) toast","D) goast"],
+    answer:1,
+    kaz:"Improve = boost."
+  },
+  {
+    q:"47. Musicians can hear better because:",
+    options:["A) they pay attention to sounds","B) they sing songs","C) they hear many instruments","D) they use brain language parts"],
+    answer:0,
+    kaz:"Олар нақты дыбыстарға назар аударады."
+  },
+  {
+    q:"48. Find the true statement",
+    options:["A) Nina Kraus plays in orchestra","B) Nina Kraus is violinist","C) Nina Kraus graduated Harvard","D) Nina Kraus is a researcher"],
+    answer:3,
+    kaz:"Nina Kraus — researcher."
+  },
+  {
+    q:"49. Music helps people improve:",
+    options:["A) reading","B) sleeping","C) memory, listening and concentration","D) painting"],
+    answer:2,
+    kaz:"Соңғы абзацта айтылған."
+  },
+  {
+    q:"50. The synonym of ignore:",
+    options:["A) stay for","B) look for","C) vote for","D) pay no attention"],
+    answer:3,
+    kaz:"Ignore = назар аудармау."
+  }
 ];
 
 const quiz = document.getElementById("quiz");
 
 questions.forEach((x,i)=>{
   let html = `<div class="question"><b>${x.q}</b><br>`;
+
   x.options.forEach((o,j)=>{
     html += `<label><input type="radio" name="q${i}" value="${j}"> ${o}</label><br>`;
   });
+
   html += "</div>";
   quiz.innerHTML += html;
 });
@@ -314,13 +467,15 @@ function checkAnswers(){
 
     res += `
     <div class="explanation">
-    <b>Correct:</b> ${x.options[x.answer]}<br>
-    <b>Your answer:</b> ${chosen}<br>
-    👉 ${x.kaz}
+      <b>Correct:</b> ${x.options[x.answer]}<br>
+      <b>Your answer:</b> ${chosen}<br>
+      👉 ${x.kaz}
     </div>`;
   });
 
-  document.getElementById("results").innerHTML = `<h2>Score: ${score}/8</h2>` + res;
+  document.getElementById("results").innerHTML =
+  `<h2>Score: ${score}/8</h2>` + res;
+
   document.getElementById("textCard").classList.add("show");
 }
 
@@ -328,9 +483,11 @@ const quiz2 = document.getElementById("quiz2");
 
 questions2.forEach((x,i)=>{
   let html = `<div class="question"><b>${x.q}</b><br>`;
+
   x.options.forEach((o,j)=>{
     html += `<label><input type="radio" name="q2${i}" value="${j}"> ${o}</label><br>`;
   });
+
   html += "</div>";
   quiz2.innerHTML += html;
 });
@@ -352,13 +509,57 @@ function checkAnswers2(){
 
     res += `
     <div class="explanation">
-    <b>Correct:</b> ${x.options[x.answer]}<br>
-    <b>Your answer:</b> ${chosen}<br>
-    👉 ${x.kaz}
+      <b>Correct:</b> ${x.options[x.answer]}<br>
+      <b>Your answer:</b> ${chosen}<br>
+      👉 ${x.kaz}
     </div>`;
   });
 
-  document.getElementById("results2").innerHTML = `<h2>Score: ${score}/8</h2>` + res;
+  let totalScore = score;
+  let level = "";
+  let levelTextKaz = "";
+  let levelTextRus = "";
+
+  if(totalScore <= 3){
+    level = "Бастапқы деңгей / Начальный уровень";
+    levelTextKaz = "Сізге әлі көбірек дайындалу керек.";
+    levelTextRus = "Вам нужно ещё больше подготовиться.";
+  } else if(totalScore <= 6){
+    level = "Орташа деңгей / Средний уровень";
+    levelTextKaz = "Негізгі түсінік бар, бірақ қосымша дайындық қажет.";
+    levelTextRus = "Базовое понимание есть, но нужна дополнительная подготовка.";
+  } else {
+    level = "Жақсы дайындық / Хорошая готовность";
+    levelTextKaz = "Нәтижеңіз жақсы, бірақ тұрақты практика маңызды.";
+    levelTextRus = "Результат хороший, но регулярная практика всё равно важна.";
+  }
+
+  let contactBlock = `
+  <div class="contact-box">
+    <h2>${level}</h2>
+
+    <p>${levelTextKaz}</p>
+    <p>${levelTextRus}</p>
+
+    <p><b>Дайындық деңгейіңізді білдіңіз бе?</b><br>
+    Қосымша тесттер мен дайындық үшін WhatsApp немесе Telegram-ға жазыңыз.</p>
+
+    <p><b>Узнали свой уровень?</b><br>
+    Для дополнительных тестов и подготовки напишите в WhatsApp или Telegram.</p>
+
+    <a class="contact-btn whatsapp" href="https://wa.me/7700797675?text=Сәлеметсіз%20бе!%20Ағылшын%20КТ%20бойынша%20дайындық%20туралы%20білгім%20келеді.%0AЗдравствуйте!%20Хочу%20узнать%20о%20подготовке%20к%20английскому%20КТ." target="_blank">
+      WhatsApp
+    </a>
+
+    <a class="contact-btn telegram" href="https://t.me/elnazm_ln" target="_blank">
+      Telegram
+    </a>
+  </div>
+  `;
+
+  document.getElementById("results2").innerHTML =
+  `<h2>Score: ${score}/8</h2>` + res + contactBlock;
+
   document.getElementById("textCard2").classList.add("show");
 }
 </script>
