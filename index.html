@@ -132,7 +132,7 @@ th{
 .contact-box{
   background:#eaf7ea;
   padding:22px;
-  margin-top:25px;
+  margin-bottom:25px;
   border-radius:15px;
   text-align:center;
   border:2px solid #2e7d32;
@@ -167,6 +167,11 @@ th{
   background:#229ED9;
 }
 
+.note{
+  font-size:14px;
+  color:#333;
+}
+
 @media(max-width:700px){
   .overlay{
     padding:20px;
@@ -195,6 +200,24 @@ th{
 <div class="container">
 
 <h1>Reading Task Test</h1>
+
+<div class="contact-box">
+  <h2>Ағылшын КТ-ға дайындалғыңыз келе ме?</h2>
+  <p>Қосымша тесттер мен дайындық үшін WhatsApp немесе Telegram-ға жазыңыз.</p>
+
+  <h2>Хотите подготовиться к английскому КТ?</h2>
+  <p>Для дополнительных тестов и подготовки напишите в WhatsApp или Telegram.</p>
+
+  <a class="contact-btn whatsapp" href="https://wa.me/77007976745?text=Сәлеметсіз%20бе!%20Ағылшын%20КТ%20бойынша%20дайындық%20туралы%20білгім%20келеді.%0AЗдравствуйте!%20Хочу%20узнать%20о%20подготовке%20к%20английскому%20КТ." target="_blank">
+    WhatsApp
+  </a>
+
+  <a class="contact-btn telegram" href="https://t.me/elnazm_ln" target="_blank">
+    Telegram
+  </a>
+
+  <p class="note">Telegram ашылғанда хабарламаны өзіңіз жазасыз.</p>
+</div>
 
 <div class="card text" id="textCard">
 
@@ -236,7 +259,7 @@ Although building a green home is often more expensive than a regular home, most
 <div class="card">
 <h2>Questions 35–42</h2>
 <div id="quiz"></div>
-<button onclick="checkAnswers()">Check Results</button>
+<button onclick="checkAnswers()">Show Results</button>
 </div>
 
 <div class="card" id="results"></div>
@@ -326,7 +349,7 @@ ways.
 <div class="card">
 <h2>Questions 43–50</h2>
 <div id="quiz2"></div>
-<button onclick="checkAnswers2()">Check Results</button>
+<button onclick="checkAnswers2()">Show Results</button>
 </div>
 
 <div class="card" id="results2"></div>
@@ -515,16 +538,15 @@ function checkAnswers2(){
     </div>`;
   });
 
-  let totalScore = score;
   let level = "";
   let levelTextKaz = "";
   let levelTextRus = "";
 
-  if(totalScore <= 3){
+  if(score <= 3){
     level = "Бастапқы деңгей / Начальный уровень";
     levelTextKaz = "Сізге әлі көбірек дайындалу керек.";
     levelTextRus = "Вам нужно ещё больше подготовиться.";
-  } else if(totalScore <= 6){
+  } else if(score <= 6){
     level = "Орташа деңгей / Средний уровень";
     levelTextKaz = "Негізгі түсінік бар, бірақ қосымша дайындық қажет.";
     levelTextRus = "Базовое понимание есть, но нужна дополнительная подготовка.";
@@ -547,7 +569,7 @@ function checkAnswers2(){
     <p><b>Узнали свой уровень?</b><br>
     Для дополнительных тестов и подготовки напишите в WhatsApp или Telegram.</p>
 
-    <a class="contact-btn whatsapp" href="https://wa.me/7700797675?text=Сәлеметсіз%20бе!%20Ағылшын%20КТ%20бойынша%20дайындық%20туралы%20білгім%20келеді.%0AЗдравствуйте!%20Хочу%20узнать%20о%20подготовке%20к%20английскому%20КТ." target="_blank">
+    <a class="contact-btn whatsapp" href="https://wa.me/77007976745?text=Сәлеметсіз%20бе!%20Ағылшын%20КТ%20бойынша%20дайындық%20туралы%20білгім%20келеді.%0AЗдравствуйте!%20Хочу%20узнать%20о%20подготовке%20к%20английскому%20КТ." target="_blank">
       WhatsApp
     </a>
 
